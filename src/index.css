@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+/* Base dark mode styles */
+.dark {
+  background-color: theme('colors.dark.bg');
+  color: theme('colors.dark.text');
+}
+
+/* Dark mode component styles */
+.dark .bg-white {
+  background-color: theme('colors.dark.card');
+}
+
+.dark .text-gray-900 {
+  color: theme('colors.dark.text');
+}
+
+.dark .text-gray-700 {
+  color: theme('colors.gray.300');
+}
+
+.dark .text-gray-600 {
+  color: theme('colors.gray.400');
+}
+
+.dark .text-gray-500 {
+  color: theme('colors.gray.400');
+}
+
+.dark .border-gray-300 {
+  border-color: theme('colors.dark.border');
+}
+
+/* Form elements in dark mode */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: theme('colors.dark.card');
+  border-color: theme('colors.dark.border');
+  color: theme('colors.dark.text');
+}
+
+.dark input::placeholder {
+  color: theme('colors.gray.500');
+}
+
+/* Table styles in dark mode */
+.dark table {
+  border-color: theme('colors.dark.border');
+}
+
+.dark th {
+  background-color: theme('colors.dark.card');
+  color: theme('colors.dark.text');
+  border-color: theme('colors.dark.border');
+}
+
+.dark td {
+  border-color: theme('colors.dark.border');
+  color: theme('colors.dark.text');
+}
+
+.dark tr:hover {
+  background-color: theme('colors.dark.bg' / 50%);
+}
+
+/* Card and container styles */
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  background-color: theme('colors.dark.bg');
+}
+
+.dark .shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Button styles */
+.dark .bg-blue-600 {
+  background-color: theme('colors.blue.700');
+}
+
+.dark .hover\:bg-blue-700:hover {
+  background-color: theme('colors.blue.800');
+}
+
+/* Transition utilities */
+.transition-theme {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Smooth theme transition for all elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
